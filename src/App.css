@@ -107,8 +107,15 @@ button {
 
 img {
   width: 35px;
+  transition: 1s;
 }
 
 .mode button:hover {
   background-color: inherit;
+}
+
+button:disabled:hover {
+  background-color: inherit;
+
+  cursor: inherit;
 }

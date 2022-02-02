@@ -116,6 +116,8 @@ export default function Button({stateCa, value, setState, state}) {
     }
 
     console.log(array.length)
+
+    
     
 
     const handleClick = () => {
@@ -126,7 +128,7 @@ export default function Button({stateCa, value, setState, state}) {
     
     return(
         <div className="btn-size">
-            <button className={stateCa} onClick={() => handleClick()}>{valueB()}</button>
+            <button className={stateCa} onClick={() => handleClick()} disabled={value === undefined}>{valueB()}</button>
         </div>
     )
 }
