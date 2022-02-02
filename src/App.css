@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-h1, p {
-  font-family: 'Roboto';
+h1,
+p {
+  font-family: "Roboto";
 }
-
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 body {
   height: 100vh;
   width: 100%;
@@ -11,6 +14,10 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
+
+  margin: auto;
+
+  overflow: hidden;
 }
 
 .flex {
@@ -20,40 +27,39 @@ body {
 
 .screen {
   justify-content: end;
-  margin-right: 35px;
-  margin-left: 35px;
+ 
   height: 100px;
   
+
+  word-wrap: inherit;
 }
 
 .black {
   background-color: black;
 
-  color: white;
-
-  font-size: 38px;
-  
-
   max-width: 425px;
-  
+
   transition: 1s;
 
   border-radius: 10px;
+
+  margin: 0;
+
+  margin: 0 10px;
 }
 
 .white {
   background-color: rgb(248, 248, 248);
-  color: black;
-
-  font-size: 38px;
-
-  border-radius: 20px solid white;
 
   max-width: 425px;
 
   transition: 1s;
 
   border-radius: 10px;
+
+  margin: 0;
+
+  margin: 0 10px;
 }
 
 button {
@@ -64,23 +70,10 @@ button {
   justify-content: center;
   align-items: center;
 
- height: 75px;
- width: 75px;
-  
-  font-family: 'Roboto';
+  height: 75px;
+  width: 75px;
 
-}
-
-.black button:hover{
-  background-color: #46494C;
-
-  border-radius: 100px;
-}
-
-.white button:hover {
-  background-color: #D9D9D9;
-
-  border-radius: 100px;
+  font-family: "Roboto";
 }
 
 .btn-size {
@@ -107,7 +100,6 @@ button {
 
 img {
   width: 35px;
-  transition: 1s;
 }
 
 .mode button:hover {
@@ -118,4 +110,70 @@ button:disabled:hover {
   background-color: inherit;
 
   cursor: inherit;
+}
+
+.blackB {
+  background-color: inherit;
+
+  color: white;
+
+  font-size: 38px;
+
+  transition: 1s;
+}
+.whiteB {
+  background-color: inherit;
+
+  color: black;
+
+  font-size: 38px;
+
+  transition: 1s;
+}
+.blackB:hover {
+  background-color: #46494c;
+
+  border-radius: 100px;
+}
+
+.whiteB:hover {
+  background-color: #d9d9d9;
+
+  border-radius: 100px;
+}
+.blackB:active {
+  background-color: #46494c;
+
+  border-radius: 100px;
+
+  transition: 1s black;
+}
+
+.whiteB:active {
+  background-color: #d9d9d9;
+
+  border-radius: 100px;
+
+  transition: 1s black;
+}
+
+.blackS {
+  background-color: inherit;
+
+  color: white;
+
+  font-size: 38px;
+
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.whiteS {
+  background-color: inherit;
+
+  color: black;
+
+  font-size: 38px;
+
+  margin-left: 35px;
+  margin-right: 35px;
 }
