@@ -73,7 +73,7 @@ button {
   transition: 1s;
 }
 
-.black button:hover {
+/* .black button:hover {
   background-color:#46494c;
 
   border-radius: 100px;
@@ -84,7 +84,7 @@ button {
   background-color: #d9d9d9;
 
   border-radius: 100px;
-}
+} */
 
 .btn-size {
   width: 25%;
@@ -170,7 +170,7 @@ img {
   transition: 1s;
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .black button:hover {
     background-color: inherit;
   
@@ -182,4 +182,4 @@ img {
   
     border-radius: 100px;
   }
-}
+} */
