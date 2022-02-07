@@ -1,14 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
+import { showScreen } from '../util/showScreen'
 
-
-export default function Screen({stateCa, state}) {
-    const [screenState] = useState(state)
-
-    const classS = () => stateCa === 'black' ? 'blackS' : 'whiteS'
+export default function Screen({stateCalculator}) {
     
     return(
-        <div className="flex screen">
-            <h1 className={classS()}>{screenState}</h1>
+        <div className="flex fixScreen">
+            <h1 className='classScreen'>{showScreen(stateCalculator)}</h1>
         </div>
     )
 

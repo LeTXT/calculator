@@ -20,48 +20,39 @@ body {
   overflow: hidden;
 }
 
+/* calculator CSS */
+
 .flex {
   display: flex;
   flex-wrap: wrap;
 }
 
-.screen {
-  justify-content: end;
- 
-  height: 100px;
-  
 
-  word-wrap: inherit;
+.classCalculator {
+  max-width: 425px;
+
+  transition: 1s;
+
+  border-radius: 10px;
+
+  margin: 0;
+
+  margin: 0 10px;
 }
 
 .black {
   background-color: black;
 
-  max-width: 425px;
-
-  transition: 1s;
-
-  border-radius: 10px;
-
-  margin: 0;
-
-  margin: 0 10px;
+  color: white;
 }
 
 .white {
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(243, 242, 242);
 
-  max-width: 425px;
-
-  transition: 1s;
-
-  border-radius: 10px;
-
-  margin: 0;
-
-  margin: 0 10px;
+  color: black;
 }
 
+/* Button css */
 button {
   border-style: none;
   cursor: pointer;
@@ -74,6 +65,25 @@ button {
   width: 75px;
 
   font-family: "Roboto";
+
+  background-color: inherit;
+
+  font-size: 38px;
+
+  transition: 1s;
+}
+
+.black button:hover {
+  background-color:#46494c;
+
+  border-radius: 100px;
+
+}
+
+.white button:hover {
+  background-color: #d9d9d9;
+
+  border-radius: 100px;
 }
 
 .btn-size {
@@ -85,6 +95,23 @@ button {
   align-items: center;
 }
 
+button:disabled:hover {
+  background-color: inherit;
+
+  cursor: inherit;
+}
+.btnOperatorActiveBlack{
+  background-color: #e170476b;
+
+  border-radius: 100px;
+}
+.btnOperatorActiveWhite {
+  background-color: #e170476b;
+
+  border-radius: 100px;
+}
+
+/* btnSwitchDarkMode CSS */
 .mode {
   display: flex;
   justify-content: start;
@@ -97,83 +124,62 @@ button {
 
   background-color: inherit;
 }
+.mode button:hover {
+  background-color: inherit;
+}
+
+/* Img CSS */
 
 img {
   width: 35px;
 }
 
-.mode button:hover {
+/* Screen CSS */
+
+.classScreen {
   background-color: inherit;
-}
-
-button:disabled:hover {
-  background-color: inherit;
-
-  cursor: inherit;
-}
-
-.blackB {
-  background-color: inherit;
-
-  color: white;
-
-  font-size: 38px;
-
-  transition: 1s;
-}
-.whiteB {
-  background-color: inherit;
-
-  color: black;
-
-  font-size: 38px;
-
-  transition: 1s;
-}
-.blackB:hover {
-  background-color: #46494c;
-
-  border-radius: 100px;
-}
-
-.whiteB:hover {
-  background-color: #d9d9d9;
-
-  border-radius: 100px;
-}
-.blackB:active {
-  background-color: #46494c;
-
-  border-radius: 100px;
-
-  transition: 1s black;
-}
-
-.whiteB:active {
-  background-color: #d9d9d9;
-
-  border-radius: 100px;
-
-  transition: 1s black;
-}
-
-.blackS {
-  background-color: inherit;
-
-  color: white;
-
   font-size: 38px;
 
   margin-left: 35px;
   margin-right: 35px;
 }
-.whiteS {
-  background-color: inherit;
 
-  color: black;
+.fixScreen {
+  justify-content: end;
+ 
+  height: 100px;
+  
+  word-wrap: inherit;
+}
 
-  font-size: 38px;
+/* Line CSS */
 
-  margin-left: 35px;
-  margin-right: 35px;
+.line {
+  width: 80%;
+  height: 0.1px;
+
+  margin: 5px auto;
+  background-color: #d9d9d9;
+  
+
+  transition: 1s;
+}
+.black .line {
+  background-color: #d9d9d92a;
+
+  transition: 1s;
+}
+
+@media screen and (max-width: 480px) {
+  .black button:hover {
+    background-color: inherit;
+  
+    border-radius: 100px;
+  }
+  
+  .white button:hover {
+    background-color: inherit;
+  
+    border-radius: 100px;
+  }
 }
