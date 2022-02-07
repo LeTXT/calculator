@@ -5,9 +5,15 @@ import { searchOperatorIndex } from './showScreen'
 // to use with = or operators
 const calculateValue = (state, set, value) => {
     const arrValue = state
-    const arrEval = eval(arrValue.join([]))
-    set([])
-    return set([arrEval, value])
+    if(state.some((e) => e === '.')) {
+        const arrEval = eval(arrValue.join([])).toFixed(1)
+        set([])
+        return set([arrEval, value])
+    } else {
+        const arrEval = eval(arrValue.join([]))
+        set([])
+        return set([arrEval, value])
+    }
 }
 
 // to use to return value
@@ -23,12 +29,36 @@ export const searchOperator = (state) => {
     }
 }
 
-const calcPercent = (state, set, value) => {
-    const arrValue = state
-    arrValue.push('/100')
-    const arrEval = eval(arrValue.join([]))
-    set([])
-    return set([arrEval])
+// used to return decimal value if there is a dot
+const valueReturn = (set, arrValue) => {
+    if(arrValue.some((e) => e === '.')) {
+        const arrEval = eval(arrValue.join([])).toFixed(1)
+        set([])
+        return set([arrEval, undefined])
+    } else {
+        const arrEval = eval(arrValue.join([]))
+        set([])
+        return set([arrEval, undefined])
+    }
+}
+
+// used to return percentage operations
+const calcPercent = (state, set) => {
+        const arrValue = state
+    if (searchOperator(state) === '+' || searchOperator(state) === '-') {
+        const findOperator = state.indexOf(searchOperator(state))
+        arrValue.push('/100', '*', state.slice(0, findOperator).join([]))
+        console.log(arrValue)
+        return valueReturn(set, arrValue)
+    } 
+    if(searchOperator(state) === '/') {
+        arrValue.push('*100')
+        return valueReturn(set, arrValue)
+    }
+    else {
+        arrValue.push('/100')
+        return valueReturn(set, arrValue)
+    }
 }
 
 
@@ -116,9 +146,9 @@ export function operationsOrDot (set, state, value) {
     }
 }
 
-export const test = (set, state, value) => set([...state, value])
+
     
     
 
 
-export default {operationsOrDot, test, searchOperator}
+export default {operationsOrDot, searchOperator}
